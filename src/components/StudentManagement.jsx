@@ -951,21 +951,54 @@ const styles = `
 ========================================= */
 
 .theme-toggle{
-  padding:10px 18px;
-  border-radius:12px;
-  border:none;
+  width:54px;
+  height:54px;
+
+  border-radius:18px;
+
+  border:1px solid rgba(0,0,0,0.08);
+
+  background:#ffffff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   cursor:pointer;
-  font-size:14px;
-  font-weight:600;
-  transition:0.3s ease;
-  background:linear-gradient(135deg,#7c3aed,#9333ea);
-  color:white;
-  box-shadow:0 0 18px rgba(124,58,237,0.45);
+
+  color:#64748b;
+
+  font-size:22px;
+
+  transition:all 0.25s ease;
+
+  box-shadow:
+    0 2px 10px rgba(0,0,0,0.04);
+
+  backdrop-filter:blur(12px);
 }
 
 .theme-toggle:hover{
   transform:translateY(-2px);
-  box-shadow:0 0 24px rgba(124,58,237,0.7);
+
+  border-color:rgba(124,58,237,0.2);
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* DARK MODE BUTTON */
+
+.dark .theme-toggle{
+  background:#0f0f12;
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  color:#f8fafc;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    0 8px 24px rgba(0,0,0,0.45);
 }
 
 /* =========================================
@@ -1410,7 +1443,7 @@ useEffect(() => {
               className="theme-toggle"
               onClick={() => setDarkMode(!darkMode)}
             >
-              {darkMode ? "☀️ Light" : "🌙 Dark"}
+              {darkMode ? "☀" : "☾"}
             </button>
             <button className="sm-logout" onClick={handleLogout}>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
